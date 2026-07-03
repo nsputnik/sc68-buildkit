@@ -1,0 +1,18 @@
+sc68-buildkit — licensing
+=========================
+
+This repository contains two kinds of files with two different terms.
+
+1. The build tooling and documentation authored for this repo — everything under
+   build/ and example/, plus README.md — are dedicated to the PUBLIC DOMAIN
+   under CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/). Use them
+   however you like.
+
+2. The prebuilt static libraries and headers under prebuilt/ are built from
+   sc68 / libsc68, Copyright (C) Benjamin Gerard, and are licensed under the
+   GNU General Public License, version 3 (see COPYING-sc68). Anything you
+   distribute that includes these binaries is a derivative work of sc68 and is
+   therefore governed by the GPLv3.
+
+sc68 is Benjamin Gerard's work — http://sc68.atari.org. This kit only rebuilds
+and repackages it.
