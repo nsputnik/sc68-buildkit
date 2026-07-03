@@ -34,6 +34,16 @@ Runtime dependency: **libao** (`apt install libao-dev`). See
 [`example/sndhtest.c`](example/sndhtest.c) for a minimal loader (opens an SNDH,
 renders a few seconds, reports whether there's sound).
 
+### Music to play
+
+Grab SNDH tunes to feed it from the **[SNDH Archive](https://sndh.atari.org/)** —
+the full, curated collection of Atari ST YM-2149 music (~9,900 tunes, organised
+by composer). Download the whole set here:
+
+> **<https://sndh.atari.org/download.php>**
+
+Every `.sndh` there plays with these libraries.
+
 ## Build for another target
 
 [`build/build.sh`](build/build.sh) cross-builds inside a Debian container that
