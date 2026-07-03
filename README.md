@@ -75,6 +75,21 @@ The sc68 SVN/mirror tree won't configure or compile as-is. `build.sh` applies:
 - **`hexdump` is required** by the bootstrap → install `bsdmainutils`.
 - **EOL Debian suites** (buster) → point apt at `archive.debian.org`.
 
+## Why this is its own project
+
+The sc68 build was hard-won, and the resulting `libsc68` is useful **well beyond
+any single app** — anything that wants to play SNDH / `.sc68` on modern Linux or
+ARM needs it. Rather than bury the fixes and the prebuilt libs inside one
+consumer, this kit keeps them **reusable**: grab-and-go binaries plus a recipe to
+rebuild for other targets. That way the next person doesn't repeat the fight.
+
+**Used by:**
+- [**retropie-game-music-player**](https://github.com/nsputnik/retropie-game-music-player)
+  — a RetroPie / EmulationStation chiptune jukebox. Its `stjuke` engine links
+  these libraries to play the Atari ST SNDH archive. It's the first real consumer,
+  and the reason this kit exists — see its
+  [`docs/BUILD-stjuke.md`](https://github.com/nsputnik/retropie-game-music-player/blob/main/docs/BUILD-stjuke.md).
+
 ## Credit & license
 
 `libsc68` and everything under `prebuilt/` are part of **sc68**, © **Benjamin
