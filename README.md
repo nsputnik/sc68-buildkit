@@ -13,6 +13,28 @@ resulting libraries so you don't have to rediscover them.
 > <https://github.com/Zeinok/sc68>), **GPLv3**. This repo only builds/repackages
 > it — see *Credit & license* below.
 
+## When to use sc68 vs psgplay
+
+If you just want the best Atari **ST/STE** SNDH playback, reach for
+**[psgplay](https://github.com/frno7/psgplay)** first: it emulates the **STE DMA
+sound** (and the LMC1992 mixer), which sc68 does **not**, so it plays the STe /
+MaxYMiser tunes (with their sampled drums/bass) that sc68 renders thin. psgplay
+also builds cleanly on a Pi in ~1 minute (no source fixes), so it needs no
+prebuilt kit like this one.
+
+sc68 keeps two niches psgplay doesn't cover, which is why this kit still exists:
+
+- **ICE-packed SNDH** — `psgplay` requires *uncompressed* SNDH data and refuses
+  packed files; **libsc68 depacks ICE transparently** (via the bundled `unice68`).
+  If your `.sndh` files are ICE-packed (magic `ICE!`), sc68 plays them as-is.
+- **`.sc68` files and Amiga (Paula) tunes** — psgplay is Atari ST/STE only; sc68
+  covers `.sc68` and Amiga.
+
+In the [retropie-game-music-player](https://github.com/nsputnik/retropie-game-music-player)
+jukebox that consumes this kit, `psgjuke` (psgplay) is the primary SNDH engine and
+`stjuke` (these libs) is the **fallback** — it fires only for ICE-packed / `.sc68`
+/ Amiga tunes psgplay can't load.
+
 ## Just grab the prebuilt libs — no build needed
 
 `prebuilt/<target>/` has ready-to-link static libraries + headers:
